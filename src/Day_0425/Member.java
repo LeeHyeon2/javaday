@@ -35,7 +35,7 @@ public class Member {
 	void findbyld() {
 		System.out.println("회원 번호 : " + this.memberNum);
 		System.out.println("id :  " + this.id);
-		System.out.println("passward : " + this.passward);
+		System.out.println("passward : " + this.password);
 		System.out.println("이름 : " + this.name);
 		System.out.println("전화번호 : " + this.phone);
 		System.out.println("나이 : " + this.age);
