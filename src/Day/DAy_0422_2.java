@@ -2,7 +2,7 @@ package Day;
 
 public class DAy_0422_2 {
 	public static void main(String[] args) {
-		// Human 클래스에 대한 객체(인스턴스) 생성
+		// Human 클래스에 대한 객체(인스턴스) 생성2222222222222222222222222222222222222222222222222222222222
 		Human human1 = new Human();
 		// [클래스이름] [객체이름(마음대로)] = new [클래스 생성자]
 		// human 객체에 정보를 담아봄
