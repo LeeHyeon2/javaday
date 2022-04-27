@@ -20,7 +20,7 @@ public class Cal {
 	}
 
 	int division() {
-		System.out.print("첫 번째 숫자: ");
+		System.out.print("111첫 번째 숫자: ");
 		int num1 = scan.nextInt();
 		System.out.print("두 번째 숫자: ");
 		int num2 = scan.nextInt();
