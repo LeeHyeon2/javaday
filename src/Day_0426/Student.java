@@ -30,5 +30,10 @@ public class Student {
 	public void setStudentMajor(String studentMajor) {
 		this.studentMajor = studentMajor;
 	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", studentNumber=" + studentNumber + ", studentName=" + studentName
+				+ ", studentMajor=" + studentMajor + "]";
+	}
 	
 }

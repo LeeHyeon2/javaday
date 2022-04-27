@@ -30,7 +30,8 @@ public class StudentMain {
 		List<Student> studentList = new ArrayList<>();
 		studentList.add(student2);
 		// get
-		System.out.println(studentList.get(0));
+		System.out.println("객체출력" + student2);
+		System.out.println("리스트에 객체만 출력" + studentList.get(0));
 		// 0번인덱스에 담긴 Student 객체의 id값을 출력한다면
 		System.out.println(studentList.get(0).getId());
 
@@ -49,6 +50,8 @@ public class StudentMain {
 			System.out.println(stu.getStudentName());
 		}
 		
+		Student[] stuArray = new Student[10];
+		stuArray[0] = student1;
 		
 		
 		
