@@ -8,7 +8,7 @@ public class CalculatorMain {
 		// add1 메서드를 호출
 		Calculator cal1 = new Calculator();
 		// 리턴이 있는 메서드를 호출할 때는 호출결과 처리를 위한 코드 필요
-		int result = cal1.add1();
+		int result = cal1.add2(10,20);
 		System.out.println(result);
 		
 		// add2 메서드 호출
