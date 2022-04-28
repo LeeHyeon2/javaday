@@ -4,6 +4,7 @@ import java.util.List;
 
 public class HumanService {
 	HumanRepository hr = new HumanRepository();
+
 //			  String   a
 	void save(HumanDTO human) {
 		System.out.println("humanService.save()");
@@ -22,16 +23,41 @@ public class HumanService {
 		}
 	}
 
-	 void findById(long id) {
-		 System.out.println("넘어온 id값 " + id);
+	void findById(Long id) {
+		System.out.println("넘어온 id값 " + id);
 		// Repository로 부터 id가 1L인 HumanDTO객체를 가져옴.
 		HumanDTO human = hr.findById(id);
-		System.out.println("조회값 : " + human);
+		if (human == null) {
+			System.out.println("조회결과가 없습니다.");
+		} else {
+			System.out.println("조회값 : " + human);			
+		}
 	}
 
-	 void remove(long id) {
-		HumanDTO human = hr.remove(id);
-		// hr.remove(id);
+	public void remove(Long id) {
+		List<HumanDTO> humanList = hr.remove(id);
+		System.out.println("삭제후 리스트");
+		for(HumanDTO human : humanList) {
+			System.out.println(human);
+		}
+	}
+
+	public void changeName(Long id , String name) {
+		HumanDTO human = hr.changeName(id,name);
+		System.out.println("수정" + human);
+		List<HumanDTO> humanList = hr.findAll1();
+		for (HumanDTO h : humanList) {
+			System.out.println(h);
+		}
+	}
+
+	public void update(Long id, String name) {
+		hr.update(id,name);
+		List<HumanDTO> humanList = hr.findAll1();
+		for (HumanDTO h : humanList) {
+			System.out.println(h);
+		}
+		
 	}
 
 }

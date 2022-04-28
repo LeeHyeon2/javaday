@@ -26,7 +26,7 @@ public class HumanRepository {
 
 	HumanDTO findById(Long id) {
 		// id값과 일치하는 객체를 찾음
-		HumanDTO human = new HumanDTO();
+		HumanDTO human = null;
 		for(int i =0 ; i<humanList.size();i++) {
 			if(id.equals(humanList.get(i).getId())) {
 				human = humanList.get(i);
@@ -35,17 +35,38 @@ public class HumanRepository {
 		return human;
 	}
 
-	 HumanDTO remove(Long id) {
-		HumanDTO human = new HumanDTO();
+	 List<HumanDTO> remove(Long id) {
+		// id=null , name=null , age=0 
 		for(int i =0 ; i<humanList.size();i++) {
 			if(id.equals(humanList.get(i).getId())) {
 				humanList.remove(i);
 			}
 		}
 		
+		return humanList;
+	}
+	 
+	HumanDTO changeName(Long id , String name) {
+		HumanDTO human = null;
+		for(int i =0 ; i<humanList.size();i++) {
+			if(id.equals(humanList.get(i).getId())) {
+				humanList.get(i).setName(name); 
+				human = humanList.get(i);
+			}
+		}
 		return human;
 	}
 
+	public void update(Long id, String name) {
+		for(int i =0 ; i<humanList.size();i++) {
+			if(id.equals(humanList.get(i).getId())) {
+				humanList.get(i).setName(name); 
+			}
+		}
+		
+	}
+	
+	
 	 
 
 	 
