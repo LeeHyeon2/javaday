@@ -1,11 +1,7 @@
 package Post;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 public class PostRepository {
 	static List<PostDTO> postList = new ArrayList<>();
@@ -81,23 +77,21 @@ public class PostRepository {
 	}
 
 	void findAll() {
-		
 		List<String> writerList = new ArrayList<String>();
-		for (PostDTO p : postList ) {
+		for (PostDTO p : postList) {
 			writerList.add(p.getPosWriter());
 		} 
 		
-		Collections.sort(writerList);
 		
-		String bf = "";
-		for(String writer : writerList) {
-			if(!bf.equals(writer)) {
-				System.out.println(writer);
-			}
-			bf = writer;
-		}
 		
-
+		
+		/*
+		 * for (int i = 0; i < postList.size(); i++) { for (int j = i + 1; j <
+		 * postList.size(); j++) { if
+		 * (!postList.get(i).getPosWriter().equals(postList.get(j).getPosWriter())) {
+		 * }else { break; } } } System.out.println(postList.get(postList.size() -
+		 * 1).getPosWriter());
+		 */
 	}
 
 }
