@@ -85,7 +85,7 @@ public class PostRepository {
 		List<String> writerList = new ArrayList<String>();
 		for (PostDTO p : postList ) {
 			writerList.add(p.getPosWriter());
-		}
+		} 
 		
 		Collections.sort(writerList);
 		
