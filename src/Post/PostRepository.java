@@ -7,11 +7,12 @@ import java.util.List;
 public class PostRepository {
 	static List<PostDTO> postList = new ArrayList<>();
 
-	void save(PostDTO pd) {
-		postList.add(pd);
+	Boolean save(PostDTO pd) {
+		Boolean result = postList.add(pd);
 		for (int i = 0; i < postList.size(); i++) {
 			postList.get(i).setId((long) (i + 1));
 		}
+		return result;
 
 	}
 
@@ -57,10 +58,22 @@ public class PostRepository {
 	}
 
 	void findWriter(String writer) {
+		Boolean findWriter = false;
 		for (int i = 0; i < postList.size(); i++) {
 			if (writer.equals(postList.get(i).getPosWriter())) {
-				System.out.println(postList.get(i));
+				findWriter = true;
 			}
+		}
+
+		if (findWriter) {
+			for (int i = 0; i < postList.size(); i++) {
+				if (writer.equals(postList.get(i).getPosWriter())) {
+					System.out.println(postList.get(i));
+
+				}
+			}
+		} else {
+			System.out.println("조회결과가 없습니다.");
 		}
 
 	}
@@ -78,21 +91,25 @@ public class PostRepository {
 	}
 
 	void findAll() {
-		List<String> writerList = new ArrayList<String>();
-		for (PostDTO p : postList ) {
-			writerList.add(p.getPosWriter());
-		} 
-		
-		Collections.sort(writerList);
-		
-		String bf = "";
-		for(String writer : writerList) {
-			if(!bf.equals(writer)) {
-				System.out.println(writer);
+		if (postList.size() == 0) {
+			System.out.print("조회결과가 없습니다.");
+		} else {
+			System.out.print("작성자 목록 : ");
+			List<String> writerList = new ArrayList<String>();
+			for (PostDTO p : postList) {
+				writerList.add(p.getPosWriter());
 			}
-			bf = writer;
+
+			Collections.sort(writerList); // ArrayList 정렬
+
+			String bf = "";
+			for (String writer : writerList) {
+				if (!bf.equals(writer)) {
+					System.out.print(writer + " ");
+				}
+				bf = writer;
+			}
 		}
-		
 	}
 
 }

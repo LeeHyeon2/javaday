@@ -19,7 +19,7 @@ public class PostMain {
 		do {
 
 			System.out.println("------------------------------------------------------------");
-			System.out.println("1.글작성 | 2.글목록 | 3.글조회 | 4.글수정 | 5.글검색 | 6.글삭제 | 7.종료");
+			System.out.println("1.글작성 | 2.작성자 목록 | 3.글조회 | 4.글수정 | 5.글검색 | 6.글삭제 | 7.종료");
 			System.out.println("------------------------------------------------------------");
 			System.out.print("선택 > ");
 			int choice = scan.nextInt();
