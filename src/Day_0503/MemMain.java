@@ -1,6 +1,6 @@
 package Day_0503;
 
-import java.util.Scanner;
+import java.util.Scanner;	
 
 
 public class MemMain {
