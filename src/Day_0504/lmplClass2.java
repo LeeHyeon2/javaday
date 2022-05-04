@@ -1,5 +1,5 @@
 package Day_0504;
-//11
+//11111111111
 public class lmplClass2 implements TestInterface {
 	@Override
 	public void hello() {
